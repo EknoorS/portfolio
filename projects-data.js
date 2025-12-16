@@ -1,51 +1,63 @@
 export const projects = [
-  {
-    id: "lumen-compositor",
-    title: "Lumen Compositor",
-    summary:
-      "Customizable industrial lamp built with modular optics and a WebGL product configurator for live demos.",
-    tags: ["CAD", "Configurator", "React"],
-    media: {
+{
+  id: "beanbot",
+  title: "The BeanBot",
+  summary:
+    "Electromechanical embedded system for automated object selection and retrieval.",
+  tags: ["Arduino", "Embedded Systems", "Motors", "PCB", "CAD"],
+  media: {
+    // TODO: Replace with actual BeanBot CAD or demo media
+    type: "model",
+    src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
+    alt: "BeanBot CAD model",
+  },
+  category: "3d",
+  detail: {
+    heroNote: "Embedded electromechanical automation project",
+    overview:
+      "BeanBot is an electromechanical system designed to autonomously identify, select, and retrieve specific items using a combination of sensors, motor actuation, and embedded control logic. The project integrates mechanical design, custom electronics, and firmware into a single cohesive system.",
+    scope: [
+      "Embedded Systems",
+      "Electromechanical Design",
+      "PCB Design",
+      "Control Logic",
+      "Mechanical CAD",
+    ],
+    year: 2023,
+    client: "Academic Project",
+    heroMedia: {
+      // TODO: Replace with actual exploded view or assembly animation
       type: "model",
       src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
-      alt: "Lumen Compositor CAD model",
+      alt: "BeanBot system overview",
     },
-    category: "3d",
-    detail: {
-      heroNote: "Adaptive lighting rig for research labs",
-      overview:
-        "Lumen Compositor is a modular light that lets lab teams reconfigure optics, cooling, and filters without swapping fixtures.",
-      scope: ["Industrial Design", "Mechanical Engineering", "WebGL"],
-      year: 2024,
-      client: "Lumen Labs",
-      heroMedia: {
-        type: "model",
-        src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
-        alt: "Lumen Compositor exploded view",
+    problem:
+      "Manual sorting and retrieval of small objects is repetitive, error-prone, and inefficient. The challenge was to design a compact system capable of reliably selecting predefined targets while handling mechanical constraints, power limitations, and real-time control.",
+    approach:
+      "Designed a modular electromechanical architecture combining stepper, servo, and DC motors controlled by an Arduino-based system. Developed custom PCB circuitry for motor drivers and power regulation, and iteratively refined the mechanical design in CAD to ensure repeatable motion and robustness. System-level debugging and testing were used to validate reliability under real operating conditions.",
+    gallery: [
+      {
+        // TODO: Replace with real prototype or PCB photos
+        type: "image",
+        src: "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1200&q=80",
+        alt: "Mechanical prototype exploration",
       },
-      problem:
-        "Labs had to use three separate fixtures to cover the range of wavelengths required for their experiments, leading to downtime and calibration drift.",
-      approach:
-        "Designed a cartridge-based head where optics, filters, and emitters snap in via a keyed rail. Built a real-time configurator so operators could pre-plan assemblies and share BOMs.",
-      gallery: [
-        {
-          type: "image",
-          src: "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1200&q=80",
-          alt: "CMF exploration",
-        },
-        {
-          type: "image",
-          src: "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
-          alt: "Render of assembly",
-        },
-        {
-          type: "video",
-          src: "https://www.youtube.com/embed/KluDYNT3cAw",
-          alt: "Configurator walkthrough",
-        },
-      ],
-    },
+      {
+        // TODO: Replace with CAD render or assembled system image
+        type: "image",
+        src: "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
+        alt: "System assembly render",
+      },
+      {
+        // TODO: Replace with real demo video if available
+        type: "video",
+        src: "https://www.youtube.com/embed/KluDYNT3cAw",
+        alt: "BeanBot system demonstration",
+      },
+    ],
   },
+},
+
   {
     id: "vector-drive-launch",
     title: "Vector Drive Launch",
