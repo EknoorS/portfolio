@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Detail | Eknoor Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script type="module" src="project-detail.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a href="index.html" class="logo">Eknoor Studio</a>
+        <nav class="site-nav">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#capabilities">Capabilities</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <button class="ghost-btn">Book a call</button>
+      </header>
+
+      <main class="project-detail" data-project-detail>
+        <p>Loading project...</p>
+      </main>
+
+      <a class="back-link" href="index.html">Back to overview</a>
+    </div>
+  </body>
+</html>
