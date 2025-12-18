@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vector Drive Launch | Eknoor Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="lightbox.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <a class="back-link" href="index.html">Back to overview</a>
+      <main class="project-detail">
+        <section class="">
+          <div class="detail-hero-content">
+            <h1>Easelock</h1>
+          <div class="detail-hero-media">
+
+            <iframe
+              src="https://www.youtube.com/embed/8vVTECEe0kM?si=l4wL65hKFfd4DS2X"
+              title="BeanBot system demonstration"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+          </div>            
+            <div class="detail-meta">
+              <div class="detail-meta-scope">
+                <span>Raspberry Pi</span>
+                <span>Embedded Systems</span>
+                <span>Python</span>
+                <span>Circuits</span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="detail-body">
+          <div>
+            <h3>Problem</h3>
+            <p>
+              Conventional door locks lack secure digital access control, traceability, and flexibility, 
+              relying on physical keys with no real-time visibility or logging.
+            </p>
+            <h3>Approach</h3>
+            <p>
+              Designed an embedded IoT access system using RFID-based authentication with keypad fallback, 
+              integrating sensors, actuators, and a camera for event-driven monitoring. Implemented a 
+              microcontroller-based architecture with app-controlled authorization management, access logging, 
+              and remote actuation, enabling secure, keyless entry and delivery access.
+            </p>
+            <button
+              type="button"
+              class="primary-btn"
+              data-lightbox
+              data-lightbox-type="pdf"
+              data-lightbox-src="./media/easelock/easelock-documentation.pdf"
+              data-lightbox-caption="Easelock system documentation"
+            >
+              View full documentation (PDF)
+            </button>
+          </div>
+        </section>
+
+        <section class="detail-gallery">
+          <figure>
+            <img
+              src="./media/easelock/voorkant_deur.jpg"
+              alt="Storyboard"
+              loading="lazy"
+              style="height: fit-content;"
+              data-lightbox
+            />
+            <figcaption>Front side door</figcaption>
+          </figure>
+          <figure>
+            <img
+              src='./media/easelock/achterkant_deur.jpg'
+              alt="Website section"
+              loading="lazy"
+              style="height: 400px;"
+              data-lightbox
+            />
+            <figcaption>Exposed electronics for testing (backside)</figcaption>
+          </figure>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

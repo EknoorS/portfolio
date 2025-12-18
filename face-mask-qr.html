@@ -11,53 +11,47 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="lightbox.js" defer></script>
   </head>
   <body>
     <div class="page-shell">
       <a class="back-link" href="index.html">Back to overview</a>
       <main class="project-detail">
-        <section class="detail-hero">
+        <section class="">
           <div class="detail-hero-content">
-            <p class="eyebrow">Spatial display for electric aircraft</p>
-            <h1>Aerie HUD</h1>
-            <p class="lede">
-              Aerie Systems needed a richer HUD to display engine diagnostics,
-              airspace alerts, and AI copilots cues without overloading the
-              pilot.
-            </p>
+
+            <h1>Face Mask & QR-Code Access Control System</h1>
+          <div class="detail-hero-media">
+          <iframe
+              src="https://www.youtube.com/embed/0Kxg_7-8nl0?si=PPkp0l3Nz4IbQCFJ"
+              title="Demonstration of the Face Mask & QR-Code Access Control System"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+          </div>
             <div class="detail-meta">
               <div class="detail-meta-scope">
-                <span>Product Strategy</span>
-                <span>UI Systems</span>
-                <span>AR Prototype</span>
+                <span>Network Sockets</span>
+                <span>Raspberry Pi</span>
+                <span>Electronics</span>
               </div>
-              <span>Year 2022</span>
-              <span>Client Aerie Systems</span>
             </div>
           </div>
-          <div class="detail-hero-media">
-            <img
-              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-              alt="HUD render"
-              loading="lazy"
-            />
-          </div>
+
         </section>
 
         <section class="detail-body">
           <div>
             <h3>Problem</h3>
             <p>
-              Existing avionics were ported to AR verbatim, creating floating
-              data tables that obscured the horizon.
+              Public access during COVID required automated verification of face masks and QR-code health passes before entry.
             </p>
           </div>
           <div>
             <h3>Approach</h3>
             <p>
-              Developed density maps for information layers, prototyped
-              depth-responsive cards, and aligned visuals with airworthiness
-              standards.
+              Extended a face-mask detection system with QR-code verification over network sockets to trigger an electro-pneumatic actuator representing door access.
             </p>
           </div>
         </section>
@@ -68,6 +62,7 @@
               src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
               alt="Interface detail"
               loading="lazy"
+              data-lightbox
             />
             <figcaption>Interface detail</figcaption>
           </figure>

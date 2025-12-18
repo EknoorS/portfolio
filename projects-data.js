@@ -40,19 +40,19 @@ export const projects = [
       {
         // TODO: Replace with real prototype or PCB photos
         type: "image",
-        src: "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1200&q=80",
+        src: "./media/beanbot/beanbot.jpg",
         alt: "Mechanical prototype exploration",
       },
       {
         // TODO: Replace with CAD render or assembled system image
         type: "image",
-        src: "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
+        src: "./media/beanbot/PCB_photo.png",
         alt: "System assembly render",
       },
       {
         // TODO: Replace with real demo video if available
         type: "video",
-        src: "https://www.youtube.com/embed/KluDYNT3cAw",
+        src: "https://www.youtube.com/embed/cjZvFY6__qw",
         alt: "BeanBot system demonstration",
       },
     ],
@@ -60,15 +60,15 @@ export const projects = [
 },
 
   {
-    id: "vector-drive-launch",
-    title: "Vector Drive Launch",
-    detailPage: "vector-drive-launch.html",
+    id: "easelock",
+    title: "Easelock",
+    detailPage: "easelock.html",
     summary:
-      "Narrative landing page with layered motion, scroll storytelling, and an embedded teaser cut.",
-    tags: ["Web", "Scroll", "Video"],
+      "Embedded IoT: keyless door access through RFID-based authentication and microcontroller control.",
+    tags: ["Raspberry Pi", "Embedded Systems", "Electronics","Python"],
     media: {
       type: "video",
-      src: "https://www.youtube.com/embed/KluDYNT3cAw",
+      src: "https://www.youtube.com/embed/8vVTECEe0kM?si=l4wL65hKFfd4DS2X",
       alt: "Vector drive launch film",
     },
     category: "video",
@@ -103,18 +103,18 @@ export const projects = [
     },
   },
   {
-    id: "aerie-hud",
-    title: "Aerie HUD",
-    detailPage: "aerie-hud.html",
+    id: "face-mask-qr",
+    title: "Face Mask & QR-Code Access Control System",
+    detailPage: "face-mask-qr.html",
     summary:
-      "Augmented reality interface for cockpit diagnostics. Includes film-quality renders and live UI prototype.",
-    tags: ["Prototype", "Figma", "Vision"],
+      "Vision-Based Access Control with Face Mask & QR Verification",
+    tags: ["Raspberry Pi", "IoT", "Face Recognition", "Sockets"],
     media: {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-      alt: "Aerie HUD interface",
+      type: "video",
+      src: "https://www.youtube.com/embed/0Kxg_7-8nl0?si=PPkp0l3Nz4IbQCFJ",
+      alt: "Demonstration of the Face Mask & QR-Code Access Control System",
     },
-    category: "web",
+    category: "electronics",
     detail: {
       heroNote: "Spatial display for electric aircraft",
       overview:

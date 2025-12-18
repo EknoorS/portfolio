@@ -15,22 +15,25 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
+    <script src="lightbox.js" defer></script>
   </head>
   <body>
     <div class="page-shell">
       <a class="back-link" href="index.html">Back to overview</a>
       <main class="project-detail">
-        <section class="detail-hero">
+        <section class="">
           <div class="detail-hero-content">
-            <p class="eyebrow">Embedded electromechanical automation project</p>
             <h1>The BeanBot</h1>
-            <p class="lede">
-              BeanBot is an electromechanical system designed to autonomously
-              identify, select, and retrieve specific items using a combination
-              of sensors, motor actuation, and embedded control logic. The
-              project integrates mechanical design, custom electronics, and
-              firmware into a single cohesive system.
-            </p>
+              <div class="detail-hero-media">
+                <model-viewer
+                  src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                  alt="BeanBot system overview"
+                  camera-controls
+                  auto-rotate
+                  disable-zoom
+                  exposure="1.1"
+                ></model-viewer>
+            </div>
             <div class="detail-meta">
               <div class="detail-meta-scope">
                 <span>Embedded Systems</span>
@@ -39,43 +42,30 @@
                 <span>Control Logic</span>
                 <span>Mechanical CAD</span>
               </div>
-              <span>Year 2023</span>
-              <span>Client Academic Project</span>
+
             </div>
           </div>
-          <div class="detail-hero-media">
-            <model-viewer
-              src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-              alt="BeanBot system overview"
-              camera-controls
-              auto-rotate
-              disable-zoom
-              exposure="1.1"
-            ></model-viewer>
-          </div>
+
         </section>
 
         <section class="detail-body">
           <div>
             <h3>Problem</h3>
             <p>
-              Manual sorting and retrieval of small objects is repetitive,
-              error-prone, and inefficient. The challenge was to design a
-              compact system capable of reliably selecting predefined targets
-              while handling mechanical constraints, power limitations, and
-              real-time control.
+              Developed an electromechanical robotic system that interfaces with 
+              a user application to dispense user-specified quantities of up to three 
+              different bean types. The system interprets user input, identifies each 
+              bean container via color sensing, measures the requested weight with an 
+              integrated load cell, and sequentially dispenses each selection.
             </p>
-          </div>
-          <div>
             <h3>Approach</h3>
             <p>
-              Designed a modular electromechanical architecture combining
-              stepper, servo, and DC motors controlled by an Arduino-based
-              system. Developed custom PCB circuitry for motor drivers and power
-              regulation, and iteratively refined the mechanical design in CAD
-              to ensure repeatable motion and robustness. System-level debugging
-              and testing were used to validate reliability under real operating
-              conditions.
+              A rail-mounted, 3D-printed robotic carriage was designed to autonomously 
+              retrieve and deliver beans. Synchronized stepper motors provide precise linear 
+              motion, while a DC motor and servo actuate the vertical arm and gripper, respectively. 
+              A color sensor embedded in the gripper enables container identification. System control 
+              and power management are implemented on a custom PCB integrating an Arduino, motor 
+              drivers, and sensors.
             </p>
           </div>
         </section>
@@ -83,29 +73,32 @@
         <section class="detail-gallery">
           <figure>
             <img
-              src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1200&q=80"
-              alt="Mechanical prototype exploration"
+              src="./media/beanbot/PCB_photo.png"
+              alt="Designed PCB"
               loading="lazy"
+              data-lightbox
             />
-            <figcaption>Mechanical prototype exploration</figcaption>
+            <figcaption>designed PCB</figcaption>
           </figure>
           <figure>
             <img
-              src="https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80"
-              alt="System assembly render"
+              src="./media/beanbot/PCBA_in_hands.png"
+              alt="PCBA manufactured in hand"
               loading="lazy"
+              data-lightbox
+            />
+            <figcaption>PCB assembly</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="./media/beanbot/beanbot.jpg"
+              alt="beanbot prototype in Autodesk Inventor"
+              loading="lazy"
+              data-lightbox
             />
             <figcaption>System assembly render</figcaption>
           </figure>
-          <figure>
-            <iframe
-              src="https://www.youtube.com/embed/KluDYNT3cAw?rel=0&modestbranding=1"
-              title="BeanBot system demonstration"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-            <figcaption>BeanBot system demonstration</figcaption>
-          </figure>
+
         </section>
       </main>
     </div>
