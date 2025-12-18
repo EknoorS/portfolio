@@ -8,9 +8,12 @@ export const projects = [
   tags: ["Arduino", "Embedded Systems", "Motors", "PCB", "CAD"],
   media: {
     // TODO: Replace with actual BeanBot CAD or demo media
-    type: "model",
-    src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
-    alt: "BeanBot CAD model",
+    //type: "model",
+    //src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
+    //alt: "BeanBot CAD model",
+    type: "image",
+    src: "./media/beanbot/beanbot.jpg",
+    alt: "BeanBot electromechanical system",
   },
   category: "3d",
   detail: {

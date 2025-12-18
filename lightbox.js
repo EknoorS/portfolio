@@ -61,8 +61,10 @@ const initLightbox = () => {
       trigger.style.cursor = "zoom-in";
     }
 
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
+    const activate = (event) => {
+      if (event) {
+        event.preventDefault();
+      }
       const type = trigger.dataset.lightboxType || "image";
       const caption =
         trigger.dataset.lightboxCaption ||
@@ -74,6 +76,13 @@ const initLightbox = () => {
         trigger.src;
 
       openLightbox({ src: source, caption, type });
+    };
+
+    trigger.addEventListener("click", activate);
+    trigger.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        activate(event);
+      }
     });
   });
 };
