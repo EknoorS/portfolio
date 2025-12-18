@@ -2,6 +2,7 @@ export const projects = [
 {
   id: "beanbot",
   title: "The BeanBot",
+  detailPage: "beanbot.html",
   summary:
     "Electromechanical embedded system for automated object selection and retrieval.",
   tags: ["Arduino", "Embedded Systems", "Motors", "PCB", "CAD"],
@@ -61,6 +62,7 @@ export const projects = [
   {
     id: "vector-drive-launch",
     title: "Vector Drive Launch",
+    detailPage: "vector-drive-launch.html",
     summary:
       "Narrative landing page with layered motion, scroll storytelling, and an embedded teaser cut.",
     tags: ["Web", "Scroll", "Video"],
@@ -103,6 +105,7 @@ export const projects = [
   {
     id: "aerie-hud",
     title: "Aerie HUD",
+    detailPage: "aerie-hud.html",
     summary:
       "Augmented reality interface for cockpit diagnostics. Includes film-quality renders and live UI prototype.",
     tags: ["Prototype", "Figma", "Vision"],

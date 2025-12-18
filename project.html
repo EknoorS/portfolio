@@ -21,10 +21,41 @@
     <div class="page-shell">
       <a class="back-link" href="index.html">Back to overview</a>
       <main class="project-detail" data-project-detail>
-        <p>Loading project...</p>
-      </main>
+        <section class="detail-hero">
+          <div class="detail-hero-content">
+            <p class="eyebrow" data-project-hero-note></p>
+            <h1 data-project-title></h1>
+            <p class="lede" data-project-overview></p>
+            <div class="detail-meta">
+              <div class="detail-meta-scope" data-project-scope></div>
+              <span data-project-year></span>
+              <span data-project-client></span>
+            </div>
+          </div>
+          <div class="detail-hero-media" data-project-hero-media></div>
+        </section>
 
-     
+        <section class="detail-body">
+          <div>
+            <h3>Problem</h3>
+            <p data-project-problem></p>
+          </div>
+          <div>
+            <h3>Approach</h3>
+            <p data-project-approach></p>
+          </div>
+        </section>
+
+        <section class="detail-gallery" data-project-gallery></section>
+
+        <section class="detail-empty" data-project-empty hidden>
+          <h1>Project not found</h1>
+          <p class="lede">
+            The case study you're looking for isn't available yet. Head back to
+            the <a href="index.html">projects overview</a> to explore other work.
+          </p>
+        </section>
+      </main>
     </div>
   </body>
 </html>

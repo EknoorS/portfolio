@@ -33,101 +33,93 @@ const mediaFactories = {
   },
 };
 
+const heroNoteEl = detailRoot?.querySelector("[data-project-hero-note]");
+const titleEl = detailRoot?.querySelector("[data-project-title]");
+const overviewEl = detailRoot?.querySelector("[data-project-overview]");
+const scopeContainer = detailRoot?.querySelector("[data-project-scope]");
+const yearEl = detailRoot?.querySelector("[data-project-year]");
+const clientEl = detailRoot?.querySelector("[data-project-client]");
+const heroMediaEl = detailRoot?.querySelector("[data-project-hero-media]");
+const problemEl = detailRoot?.querySelector("[data-project-problem]");
+const approachEl = detailRoot?.querySelector("[data-project-approach]");
+const galleryEl = detailRoot?.querySelector("[data-project-gallery]");
+const fallbackSection = detailRoot?.querySelector("[data-project-empty]");
+const toggledSections = detailRoot
+  ? detailRoot.querySelectorAll(".detail-hero, .detail-body, .detail-gallery")
+  : [];
+
+const renderMedia = (media) => {
+  if (!media) return null;
+  const factory = mediaFactories[media.type];
+  return factory ? factory(media) : null;
+};
+
+const toggleDetailVisibility = (isVisible) => {
+  toggledSections.forEach((section) => {
+    section.hidden = !isVisible;
+  });
+  if (fallbackSection) {
+    fallbackSection.hidden = isVisible;
+  }
+};
+
 function renderDetail(currentProject) {
-  detailRoot.innerHTML = "";
-  const heroSection = document.createElement("section");
-  heroSection.className = "detail-hero";
+  if (
+    !detailRoot ||
+    !heroNoteEl ||
+    !titleEl ||
+    !overviewEl ||
+    !scopeContainer ||
+    !yearEl ||
+    !clientEl ||
+    !heroMediaEl ||
+    !problemEl ||
+    !approachEl ||
+    !galleryEl
+  ) {
+    return;
+  }
 
-  const heroContent = document.createElement("div");
-  const eyebrow = document.createElement("p");
-  eyebrow.className = "eyebrow";
-  eyebrow.textContent = currentProject.detail.heroNote;
+  toggleDetailVisibility(true);
 
-  const title = document.createElement("h1");
-  title.textContent = currentProject.title;
+  heroNoteEl.textContent = currentProject.detail.heroNote;
+  titleEl.textContent = currentProject.title;
+  overviewEl.textContent = currentProject.detail.overview;
 
-  const overview = document.createElement("p");
-  overview.className = "lede";
-  overview.textContent = currentProject.detail.overview;
-
-  const meta = document.createElement("div");
-  meta.className = "detail-meta";
-
+  scopeContainer.innerHTML = "";
   currentProject.detail.scope.forEach((scopeItem) => {
     const badge = document.createElement("span");
     badge.textContent = scopeItem;
-    meta.appendChild(badge);
+    scopeContainer.appendChild(badge);
   });
+  yearEl.textContent = `Year ${currentProject.detail.year}`;
+  clientEl.textContent = `Client ${currentProject.detail.client}`;
 
-  const yearBadge = document.createElement("span");
-  yearBadge.textContent = `Year ${currentProject.detail.year}`;
-  meta.appendChild(yearBadge);
-
-  const clientBadge = document.createElement("span");
-  clientBadge.textContent = `Client ${currentProject.detail.client}`;
-  meta.appendChild(clientBadge);
-
-  heroContent.append(eyebrow, title, overview, meta);
-
-  const heroMedia = document.createElement("div");
-  heroMedia.className = "detail-hero-media";
-  const heroRenderer = mediaFactories[currentProject.detail.heroMedia.type];
-  const heroMediaElement = heroRenderer
-    ? heroRenderer(currentProject.detail.heroMedia)
-    : null;
-  if (heroMediaElement) {
-    heroMedia.appendChild(heroMediaElement);
+  heroMediaEl.innerHTML = "";
+  const heroMedia = renderMedia(currentProject.detail.heroMedia);
+  if (heroMedia) {
+    heroMediaEl.appendChild(heroMedia);
   }
 
-  heroSection.append(heroContent, heroMedia);
+  problemEl.textContent = currentProject.detail.problem;
+  approachEl.textContent = currentProject.detail.approach;
 
-  const bodySection = document.createElement("section");
-  bodySection.className = "detail-body";
-
-  const problemBlock = document.createElement("div");
-  const problemHeading = document.createElement("h3");
-  problemHeading.textContent = "Problem";
-  const problemCopy = document.createElement("p");
-  problemCopy.textContent = currentProject.detail.problem;
-  problemBlock.append(problemHeading, problemCopy);
-
-  const approachBlock = document.createElement("div");
-  const approachHeading = document.createElement("h3");
-  approachHeading.textContent = "Approach";
-  const approachCopy = document.createElement("p");
-  approachCopy.textContent = currentProject.detail.approach;
-  approachBlock.append(approachHeading, approachCopy);
-
-  bodySection.append(problemBlock, approachBlock);
-
-  const gallerySection = document.createElement("section");
-  gallerySection.className = "detail-gallery";
+  galleryEl.innerHTML = "";
   currentProject.detail.gallery.forEach((mediaItem) => {
     const figure = document.createElement("figure");
-    const renderer = mediaFactories[mediaItem.type];
-    const rendered = renderer ? renderer(mediaItem) : null;
+    const rendered = renderMedia(mediaItem);
     if (rendered) {
       figure.appendChild(rendered);
     }
     const caption = document.createElement("figcaption");
     caption.textContent = mediaItem.alt;
     figure.appendChild(caption);
-    gallerySection.appendChild(figure);
+    galleryEl.appendChild(figure);
   });
-
-  detailRoot.append(heroSection, bodySection, gallerySection);
 }
 
 if (project) {
   renderDetail(project);
 } else {
-  detailRoot.innerHTML = `
-    <section>
-      <h1>Project not found</h1>
-      <p class="lede">
-        The case study you're looking for isn't available yet. Head back to the
-        <a href="index.html">projects overview</a> to explore other work.
-      </p>
-    </section>
-  `;
+  toggleDetailVisibility(false);
 }

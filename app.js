@@ -63,14 +63,9 @@ function renderProjects(projectList) {
       tagGroup.appendChild(tagEl);
     });
 
-    const link = document.createElement("span");
-    link.className = "inline-link";
-    link.textContent = "View case study";
-
-    card.append(mediaWrap, title, summary, tagGroup, link);
-
     const goToDetail = () => {
-      window.location.href = `project.html?id=${project.id}`;
+      const detailPage = project.detailPage || `project.html?id=${project.id}`;
+      window.location.href = detailPage;
     };
 
     card.addEventListener("click", goToDetail);
@@ -81,6 +76,7 @@ function renderProjects(projectList) {
       }
     });
 
+    card.append(mediaWrap, title, summary, tagGroup);
     grid.appendChild(card);
   });
 }
