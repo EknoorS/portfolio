@@ -261,6 +261,12 @@ video {
   border: none;
 }
 
+.media-fit-contain {
+  object-fit: contain;
+  object-position: center;
+  background: #f0f0f2;
+}
+
 .project-card h3 {
   margin: 0.5rem 0 0;
 }

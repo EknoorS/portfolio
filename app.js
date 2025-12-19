@@ -27,6 +27,9 @@ const mediaFactories = {
     img.src = media.src;
     img.alt = media.alt;
     img.loading = "lazy";
+    if (media.fit === "contain") {
+      img.classList.add("media-fit-contain");
+    }
     return img;
   },
 };
@@ -41,7 +44,7 @@ function renderProjects(projectList) {
     card.setAttribute("aria-label", `View ${project.title}`);
 
     const mediaWrap = document.createElement("div");
-    mediaWrap.className = "project-media";
+    mediaWrap.className = "media-fit-contain";
     const mediaRenderer = mediaFactories[project.media.type];
     const mediaElement = mediaRenderer ? mediaRenderer(project.media) : null;
     if (mediaElement) {

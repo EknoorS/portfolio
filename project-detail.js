@@ -29,6 +29,9 @@ const mediaFactories = {
     img.src = media.src;
     img.alt = media.alt;
     img.loading = "lazy";
+    if (media.fit === "contain") {
+      img.classList.add("media-fit-contain");
+    }
     return img;
   },
 };

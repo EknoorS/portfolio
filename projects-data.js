@@ -12,8 +12,9 @@ export const projects = [
     //src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
     //alt: "BeanBot CAD model",
     type: "image",
-    src: "./media/beanbot/beanbot.jpg",
+    src: "./media/beanbot/beanbot.png",
     alt: "BeanBot electromechanical system",
+    fit: "contain",
   },
   category: "3d",
   detail: {
