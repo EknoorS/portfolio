@@ -171,7 +171,7 @@ video {
   background: #000;
 }
 
-.hero-media-frame p {
+.hero-media-frame p li {
   position: absolute;
   bottom: 12px;
   right: 16px;
@@ -452,6 +452,12 @@ video {
 }
 
 .detail-body p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.detail-body ul,
+.detail-body li {
   color: var(--muted);
   line-height: 1.6;
 }
