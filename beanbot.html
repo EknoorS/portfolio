@@ -59,33 +59,46 @@
 
         </section>
 
-        <section class="detail-body">
-          <div>
-            <h3>Problem</h3>
-            <p>
-              Developed an electromechanical robotic system that interfaces with 
-              a user application to dispense user-specified quantities of up to three 
-              different bean types. The system interprets user input, identifies each 
-              bean container via color sensing, measures the requested weight with an 
-              integrated load cell, and sequentially dispenses each selection.
-            </p>
-            <h3>Approach</h3>
-            <p>
-              A rail-mounted, 3D-printed robotic carriage was designed to autonomously 
-              retrieve and deliver beans. Synchronized stepper motors provide precise linear 
-              motion, while a DC motor and servo actuate the vertical arm and gripper, respectively. 
-              A color sensor embedded in the gripper enables container identification. System control 
-              and power management are implemented on a custom PCB integrating an Arduino, motor 
-              drivers, and sensors.
-            </p>
-          </div>
-        </section>
+<section class="detail-body">
+  <div>
+    <h3>Problem</h3>
+    <p>
+      Developed an electromechanical robotic system that interfaces with 
+      a user application to dispense user-specified quantities of up to three 
+      different bean types. The system interprets user input, identifies each 
+      bean container via color sensing, measures the requested weight with an 
+      integrated load cell, and sequentially dispenses each selection.
+    </p>
+
+    <h3>Approach</h3>
+    <p>
+      A rail-mounted, 3D-printed robotic carriage was designed to autonomously 
+      retrieve and deliver beans. Synchronized stepper motors provide precise linear 
+      motion, while a DC motor and servo actuate the vertical arm and gripper, respectively. 
+      A color sensor embedded in the gripper enables container identification. System control 
+      and power management are implemented on a custom PCB integrating an Arduino, motor 
+      drivers, and sensors.
+    </p>
+
+    <h3>Results</h3>
+    <ul>
+      <li>Successfully dispensed up to three different bean types per order using automated identification and weighing.</li>
+      <li>Achieved repeatable positioning through stepper-driven linear motion and homing logic.</li>
+      <li>Integrated sensing, actuation, and control on a single custom PCB for reliable operation.</li>
+    </ul>
+
+    <h3>My Role</h3>
+    <p>
+      Designed the embedded control system and custom PCB, implemented motor control and sensor integration, and led system-level testing and integration.
+    </p>
+  </div>
+</section>
 
         <section class="detail-gallery">
           <figure>
             <img
               src="./media/beanbot/PCB_photo.png"
-              alt="Designed PCB"
+              alt="PCB routing"
               loading="lazy"
               data-lightbox
             />
