@@ -7,14 +7,11 @@ export const projects = [
     "Electromechanical embedded system for automated object selection and retrieval.",
   tags: ["Arduino", "Embedded Systems", "Motors", "PCB", "CAD"],
   media: {
-    // TODO: Replace with actual BeanBot CAD or demo media
-    //type: "model",
-    //src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
-    //alt: "BeanBot CAD model",
-    type: "image",
-    src: "./media/beanbot/beanbot.png",
-    alt: "BeanBot electromechanical system",
-    fit: "contain",
+    type: "model",
+    src: "./media/beanbot/beanbot.glb",
+    alt: "BeanBot CAD model",
+    scale: "5 5 5",
+
   },
   category: "3d",
   detail: {
@@ -35,6 +32,7 @@ export const projects = [
       type: "model",
       src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
       alt: "BeanBot system overview",
+      scale: "3 3 3",
     },
     problem:
       "Manual sorting and retrieval of small objects is repetitive, error-prone, and inefficient. The challenge was to design a compact system capable of reliably selecting predefined targets while handling mechanical constraints, power limitations, and real-time control.",

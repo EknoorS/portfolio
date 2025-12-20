@@ -11,6 +11,9 @@ const mediaFactories = {
     viewer.setAttribute("camera-controls", "");
     viewer.setAttribute("auto-rotate", "");
     viewer.setAttribute("disable-zoom", "");
+    if (media.scale) {
+      viewer.setAttribute("scale", media.scale);
+    }
     viewer.setAttribute("exposure", "1.1");
     return viewer;
   },
