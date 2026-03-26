@@ -171,7 +171,7 @@ video {
   background: #000;
 }
 
-.hero-media-frame p li {
+.hero-media-frame p {
   position: absolute;
   bottom: 12px;
   right: 16px;
@@ -417,6 +417,12 @@ video {
   padding-top: 12px;
 }
 
+.detail-meta-scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .detail-meta span {
   padding: 0.35rem 1rem;
   border-radius: 999px;
@@ -443,8 +449,9 @@ video {
 }
 
 .detail-body {
-  display: flex;
-
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
 }
 
 .detail-body h3 {
@@ -463,13 +470,13 @@ video {
 }
 
 .detail-gallery {
-  display: flex;
-  flex-wrap: wrap;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .detail-gallery figure {
-  margin: 3rem 1.5rem 0;
+  margin: 0;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   overflow: hidden;
@@ -480,8 +487,8 @@ video {
 .detail-gallery img,
 .detail-gallery video,
 .detail-gallery iframe {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   min-height: 240px;
   object-fit: cover;
 }
@@ -499,6 +506,9 @@ video {
   padding: 1rem;
   background: linear-gradient(135deg, #fff, #f2f8ff);
   height: 320px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -555,6 +565,138 @@ video {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.section-footnote {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.recommendation-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.recommendation-card {
+  width: min(760px, 100%);
+  cursor: pointer;
+  border-radius: 28px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommendation-card:hover,
+.recommendation-card:focus-visible {
+  transform: translateY(-4px);
+  outline: none;
+}
+
+.recommendation-sheet {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 30px 30px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(0, 195, 255, 0.08), transparent 42%),
+    linear-gradient(180deg, #ffffff, #fbfdff);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+}
+
+.recommendation-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--accent), #5bd6ff);
+}
+
+.recommendation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.recommendation-kicker {
+  margin: 0;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.recommendation-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.recommendation-title-row h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+
+.recommendation-cta {
+  flex-shrink: 0;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+}
+
+.recommendation-summary {
+  max-width: 56ch;
+  margin: 16px 0 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.recommendation-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), rgba(9, 9, 9, 0.08) 45%, transparent);
+}
+
+.recommendation-signoff {
+  padding-top: 20px;
+}
+
+.recommendation-label,
+.recommendation-name,
+.recommendation-role {
+  margin: 0;
+}
+
+.recommendation-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.recommendation-name {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.recommendation-role {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .recommendation-title-row {
+    flex-direction: column;
+    gap: 14px;
+  }
 }
 
 .lightbox-overlay {
